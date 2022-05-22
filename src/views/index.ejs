@@ -1,0 +1,113 @@
+<%-include ('partials/_header.ejs')%>
+
+
+<div class ="row" id="barra_de_busqueda">
+    <div class="col">
+        <input type="text" class="form-control" id="myInput0" onkeyup="myFunction()" placeholder="Busca por nombre">
+    </div>
+    <div class="col">
+        <input type="text" class="form-control" id="myInput1" onkeyup="myFunction()" placeholder="Buscar por hospital">
+    </div> 
+    <div class = "col">
+        <a href="/Completado" class="btn btn-success">Completado</a>
+        <a href="/Pendientes" class="btn btn-primary">Pendientes</a>
+        <a href="/Calendario" class="btn btn-info">Calendario</a>
+    </div>
+</div>
+
+
+<!-- despliegue de tabla y valores --> 
+<div class="row">    
+    <div class="col">
+      <table id="myTable" class="table table-striped table-hover">        
+        <tr class="header">    
+                        <th>PARTIDA</th>
+                        <th>JCU</th>
+                        <th>CLASIFICACION</th>
+                        <th>EQUIPO</th>
+                        <th>MARCA</th>
+                        <th>MODELO</th>
+                        <th>SERIE</th>
+                        <th>UNIDAD</th> 
+                        <th></th>                  
+          </tr>            
+                       <% for(var i = 0 ;i < equipos.length; i++){ %> 
+          <tr> 
+                        <td><%= equipos[i].PARTIDA%></td>
+                        <td><%= equipos[i].JCU%></td>
+                        <td><%= equipos[i].CLASIFICACION%></td>
+                        <td><%= equipos[i].EQUIPO%></td>
+                        <td><%= equipos[i].MARCA%></td>
+                        <td><%= equipos[i].MODELO%></td>
+                        <td><%= equipos[i].SERIE%></td>
+                        <td><%= equipos[i].UNIDAD%></td>
+                        <td> 
+                        <a href="/Informacion/<%= equipos[i]._id%>" class= "btn btn-info">Datos</a>
+                        </td>
+            </tr>
+                        <% } %>                
+      </table>
+    </div>
+  </div>  
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  funcion para filtrar en tiempo real datos del listado-->
+<script>
+    
+function myFunction() {
+
+// Declara las variables a utilizar como las entradas (inputs), las palabras a buscar(filros)
+// La variable iterable
+// La tabla a trabajar
+// El arreglo que usaas apra modificar los valores (tr)
+
+        var input, input1, filter, filter1, i, txtValue, txtValue1, table, tr, td, td1;
+  
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        input = document.getElementById("myInput0");
+        filter = input.value.toUpperCase();
+        input1 = document.getElementById("myInput1");
+        filter1 = input1.value.toUpperCase();
+        
+        
+    for (i = 0; i < tr.length; i++){
+// Seleccionamos la columna a iterar
+        td = tr[i].getElementsByTagName("td")[3];
+        td1 = tr[i].getElementsByTagName("td")[7];
+// Comprobamos que existan valores
+        if(td && td1){
+            
+// Aseguramos un valor operable en cada columna              
+        txtValue = td.textContent || td.innerText;
+        txtValue1 = td1.textContent || td1.innerText;
+
+//comparamos el valor txtvalue y txtvalue1 con nuestros filtros
+            if( (txtValue.toUpperCase().indexOf(filter) > -1) && (txtValue1.toUpperCase().indexOf(filter1) > -1) ){
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+                }         
+        }
+    }
+}
+</script>
+
+
+
+<%- include ('partials/_footer.ejs')%>
+
+

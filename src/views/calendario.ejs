@@ -1,0 +1,639 @@
+<%-include ('partials/_header.ejs')%>
+
+
+
+<!-- Tabs navs -->
+<ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link active"
+      id="ex1-tab-1"
+      data-mdb-toggle="tab"
+      href="#ex1-tabs-1"
+      role="tab"
+      aria-controls="ex1-tabs-1"
+      aria-selected="true"
+      >ENERO </a
+    >
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link"
+      id="ex1-tab-2"
+      data-mdb-toggle="tab"
+      href="#ex1-tabs-2"
+      role="tab"
+      aria-controls="ex1-tabs-2"
+      aria-selected="false"
+      >FEBRERO</a
+    >
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link"
+      id="ex1-tab-3"
+      data-mdb-toggle="tab"
+      href="#ex1-tabs-3"
+      role="tab"
+      aria-controls="ex1-tabs-3"
+      aria-selected="false"
+      >MARZO</a
+    >
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link"
+      id="ex1-tab-4"
+      data-mdb-toggle="tab"
+      href="#ex1-tabs-4"
+      role="tab"
+      aria-controls="ex1-tabs-4"
+      aria-selected="false"
+      >ABRIL</a
+    >
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link"
+      id="ex1-tab-5"
+      data-mdb-toggle="tab"
+      href="#ex1-tabs-5"
+      role="tab"
+      aria-controls="ex1-tabs-5"
+      aria-selected="true"
+      >MAYO</a
+    >
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link"
+      id="ex1-tab-6"
+      data-mdb-toggle="tab"
+      href="#ex1-tabs-6"
+      role="tab"
+      aria-controls="ex1-tabs-6"
+      aria-selected="true"
+      >JUNIO</a
+    >
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link"
+      id="ex1-tab-7"
+      data-mdb-toggle="tab"
+      href="#ex1-tabs-7"
+      role="tab"
+      aria-controls="ex1-tabs-7"
+      aria-selected="true"
+      >JULIO</a
+    >
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link"
+      id="ex1-tab-8"
+      data-mdb-toggle="tab"
+      href="#ex1-tabs-8"
+      role="tab"
+      aria-controls="ex1-tabs-8"
+      aria-selected="true"
+      >AGOSTO</a
+    >
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link"
+      id="ex1-tab-9"
+      data-mdb-toggle="tab"
+      href="#ex1-tabs-9"
+      role="tab"
+      aria-controls="ex1-tabs-9"
+      aria-selected="true"
+      >SEPTIEMBRE</a
+    >
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link"
+      id="ex1-tab-10"
+      data-mdb-toggle="tab"
+      href="#ex1-tabs-10"
+      role="tab"
+      aria-controls="ex1-tabs-10"
+      aria-selected="true"
+      >OCTUBRE</a
+    >
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link"
+      id="ex1-tab-11"
+      data-mdb-toggle="tab"
+      href="#ex1-tabs-11"
+      role="tab"
+      aria-controls="ex1-tabs-11"
+      aria-selected="true"
+      >NOVIEMBRE</a
+    >
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link"
+      id="ex1-tab-12"
+      data-mdb-toggle="tab"
+      href="#ex1-tabs-12"
+      role="tab"
+      aria-controls="ex1-tabs-12"
+      aria-selected="true"
+      >DICIEMBRE</a
+    >
+  </li>
+</ul>
+<!-- Tabs navs -->
+
+<!-- Tabs content -->
+<div class="tab-content" id="ex1-content">
+
+  <div class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel" aria-labelledby="ex1-tab-1">
+    
+
+    <div class="row">    
+      <div class="col">
+        <table id="myTable" class="table table-striped table-hover">
+          <tr class="header">    
+                          <th>PARTIDA</th>
+                          <th>JCU</th>
+                          <th>CLASIFICACION</th>
+                          <th>EQUIPO</th>
+                          <th>MARCA</th>
+                          <th>MODELO</th>
+                          <th>SERIE</th>
+                          <th>UNIDAD</th> 
+                          <th></th>                  
+            </tr>            
+                         <% for(var i = 0 ;i < ENERO.length; i++){ %> 
+            <tr> 
+                          <td><%= ENERO[i].PARTIDA%></td>
+                          <td><%= ENERO[i].JCU%></td>
+                          <td><%= ENERO[i].CLASIFICACION%></td>
+                          <td><%= ENERO[i].EQUIPO%></td>
+                          <td><%= ENERO[i].MARCA%></td>
+                          <td><%= ENERO[i].MODELO%></td>
+                          <td><%= ENERO[i].SERIE%></td>
+                          <td><%= ENERO[i].UNIDAD%></td>
+                          <td>
+                          <a href="/Informacion/<%= ENERO[i]._id%>" class= "btn btn-info">Datos</a>
+                          </td>
+              </tr>
+                          <% } %>                
+        </table>
+      </div>
+    </div>
+
+    
+  </div>
+
+  <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
+    
+
+    <div class="row">    
+      <div class="col">
+        <table id="myTable" class="table table-striped table-hover">
+          <tr class="header">    
+                          <th>PARTIDA</th>
+                          <th>JCU</th>
+                          <th>CLASIFICACION</th>
+                          <th>EQUIPO</th>
+                          <th>MARCA</th>
+                          <th>MODELO</th>
+                          <th>SERIE</th>
+                          <th>UNIDAD</th> 
+                          <th></th>                  
+            </tr>            
+                         <% for(var i = 0 ;i < FEBRERO.length; i++){ %> 
+            <tr> 
+                          <td><%= FEBRERO[i].PARTIDA%></td>
+                          <td><%= FEBRERO[i].JCU%></td>
+                          <td><%= FEBRERO[i].CLASIFICACION%></td>
+                          <td><%= FEBRERO[i].EQUIPO%></td>
+                          <td><%= FEBRERO[i].MARCA%></td>
+                          <td><%= FEBRERO[i].MODELO%></td>
+                          <td><%= FEBRERO[i].SERIE%></td>
+                          <td><%= FEBRERO[i].UNIDAD%></td>
+                          <td>
+                          <a href="/Informacion/<%= FEBRERO[i]._id%>" class= "btn btn-info">Datos</a>
+                          </td>
+              </tr>
+                          <% } %>                
+        </table>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="tab-pane fade" id="ex1-tabs-3" role="tabpanel" aria-labelledby="ex1-tab-3">
+   
+
+    <div class="row">    
+      <div class="col">
+        <table id="myTable" class="table table-striped table-hover">
+          <tr class="header">    
+                          <th>PARTIDA</th>
+                          <th>JCU</th>
+                          <th>CLASIFICACION</th>
+                          <th>EQUIPO</th>
+                          <th>MARCA</th>
+                          <th>MODELO</th>
+                          <th>SERIE</th>
+                          <th>UNIDAD</th> 
+                          <th></th>                  
+            </tr>            
+                         <% for(var i = 0 ;i < MARZO.length; i++){ %> 
+            <tr> 
+                          <td><%= MARZO[i].PARTIDA%></td>
+                          <td><%= MARZO[i].JCU%></td>
+                          <td><%= MARZO[i].CLASIFICACION%></td>
+                          <td><%= MARZO[i].EQUIPO%></td>
+                          <td><%= MARZO[i].MARCA%></td>
+                          <td><%= MARZO[i].MODELO%></td>
+                          <td><%= MARZO[i].SERIE%></td>
+                          <td><%= MARZO[i].UNIDAD%></td>
+                          <td>
+                          <a href="/Informacion/<%= MARZO[i]._id%>" class= "btn btn-info">Datos</a>
+                          </td>
+              </tr>
+                          <% } %>                
+        </table>
+      </div>
+    </div> 
+
+
+  </div>
+
+  <div class="tab-pane fade" id="ex1-tabs-4" role="tabpanel" aria-labelledby="ex1-tab-4">
+   
+
+    <div class="row">    
+      <div class="col">
+        <table id="myTable" class="table table-striped table-hover">
+          <tr class="header">    
+                          <th>PARTIDA</th>
+                          <th>JCU</th>
+                          <th>CLASIFICACION</th>
+                          <th>EQUIPO</th>
+                          <th>MARCA</th>
+                          <th>MODELO</th>
+                          <th>SERIE</th>
+                          <th>UNIDAD</th> 
+                          <th></th>                  
+            </tr>            
+                         <% for(var i = 0 ;i < ABRIL.length; i++){ %> 
+            <tr> 
+                          <td><%= ABRIL[i].PARTIDA%></td>
+                          <td><%= ABRIL[i].JCU%></td>
+                          <td><%= ABRIL[i].CLASIFICACION%></td>
+                          <td><%= ABRIL[i].EQUIPO%></td>
+                          <td><%= ABRIL[i].MARCA%></td>
+                          <td><%= ABRIL[i].MODELO%></td>
+                          <td><%= ABRIL[i].SERIE%></td>
+                          <td><%= ABRIL[i].UNIDAD%></td>
+                          <td>
+                          <a href="/Informacion/<%= ABRIL[i]._id%>" class= "btn btn-info">Datos</a>
+                          </td>
+              </tr>
+                          <% } %>                
+        </table>
+      </div>
+    </div> 
+
+
+  </div>
+
+  <div class="tab-pane fade" id="ex1-tabs-5" role="tabpanel" aria-labelledby="ex1-tab-5">
+   
+
+    <div class="row">    
+      <div class="col">
+        <table id="myTable" class="table table-striped table-hover">
+          <tr class="header">    
+                          <th>PARTIDA</th>
+                          <th>JCU</th>
+                          <th>CLASIFICACION</th>
+                          <th>EQUIPO</th>
+                          <th>MARCA</th>
+                          <th>MODELO</th>
+                          <th>SERIE</th>
+                          <th>UNIDAD</th> 
+                          <th></th>                  
+            </tr>            
+                         <% for(var i = 0 ;i < MAYO.length; i++){ %> 
+            <tr> 
+                          <td><%= MAYO[i].PARTIDA%></td>
+                          <td><%= MAYO[i].JCU%></td>
+                          <td><%= MAYO[i].CLASIFICACION%></td>
+                          <td><%= MAYO[i].EQUIPO%></td>
+                          <td><%= MAYO[i].MARCA%></td>
+                          <td><%= MAYO[i].MODELO%></td>
+                          <td><%= MAYO[i].SERIE%></td>
+                          <td><%= MAYO[i].UNIDAD%></td>
+                          <td>
+                          <a href="/Informacion/<%= MAYO[i]._id%>" class= "btn btn-info">Datos</a>
+                          </td>
+              </tr>
+                          <% } %>                
+        </table>
+      </div>
+    </div> 
+
+
+  </div>
+
+  <div class="tab-pane fade" id="ex1-tabs-6" role="tabpanel" aria-labelledby="ex1-tab-6">
+   
+
+    <div class="row">    
+      <div class="col">
+        <table id="myTable" class="table table-striped table-hover">
+          <tr class="header">    
+                          <th>PARTIDA</th>
+                          <th>JCU</th>
+                          <th>CLASIFICACION</th>
+                          <th>EQUIPO</th>
+                          <th>MARCA</th>
+                          <th>MODELO</th>
+                          <th>SERIE</th>
+                          <th>UNIDAD</th> 
+                          <th></th>                  
+            </tr>            
+                         <% for(var i = 0 ;i < JUNIO.length; i++){ %> 
+            <tr> 
+                          <td><%= JUNIO[i].PARTIDA%></td>
+                          <td><%= JUNIO[i].JCU%></td>
+                          <td><%= JUNIO[i].CLASIFICACION%></td>
+                          <td><%= JUNIO[i].EQUIPO%></td>
+                          <td><%= JUNIO[i].MARCA%></td>
+                          <td><%= JUNIO[i].MODELO%></td>
+                          <td><%= JUNIO[i].SERIE%></td>
+                          <td><%= JUNIO[i].UNIDAD%></td>
+                          <td>
+                          <a href="/Informacion/<%= JUNIO[i]._id%>" class= "btn btn-info">Datos</a>
+                          </td>
+              </tr>
+                          <% } %>                
+        </table>
+      </div>
+    </div> 
+
+
+  </div>
+
+  <div class="tab-pane fade" id="ex1-tabs-7" role="tabpanel" aria-labelledby="ex1-tab-7">
+   
+
+    <div class="row">    
+      <div class="col">
+        <table id="myTable" class="table table-striped table-hover">
+          <tr class="header">    
+                          <th>PARTIDA</th>
+                          <th>JCU</th>
+                          <th>CLASIFICACION</th>
+                          <th>EQUIPO</th>
+                          <th>MARCA</th>
+                          <th>MODELO</th>
+                          <th>SERIE</th>
+                          <th>UNIDAD</th> 
+                          <th></th>                  
+            </tr>            
+                         <% for(var i = 0 ;i < JULIO.length; i++){ %> 
+            <tr> 
+                          <td><%= JULIO[i].PARTIDA%></td>
+                          <td><%= JULIO[i].JCU%></td>
+                          <td><%= JULIO[i].CLASIFICACION%></td>
+                          <td><%= JULIO[i].EQUIPO%></td>
+                          <td><%= JULIO[i].MARCA%></td>
+                          <td><%= JULIO[i].MODELO%></td>
+                          <td><%= JULIO[i].SERIE%></td>
+                          <td><%= JULIO[i].UNIDAD%></td>
+                          <td>
+                          <a href="/Informacion/<%= JULIO[i]._id%>" class= "btn btn-info">Datos</a>
+                          </td>
+              </tr>
+                          <% } %>                
+        </table>
+      </div>
+    </div> 
+
+
+  </div>
+
+
+  <div class="tab-pane fade" id="ex1-tabs-8" role="tabpanel" aria-labelledby="ex1-tab-8">
+   
+
+    <div class="row">    
+      <div class="col">
+        <table id="myTable" class="table table-striped table-hover">
+          <tr class="header">    
+                          <th>PARTIDA</th>
+                          <th>JCU</th>
+                          <th>CLASIFICACION</th>
+                          <th>EQUIPO</th>
+                          <th>MARCA</th>
+                          <th>MODELO</th>
+                          <th>SERIE</th>
+                          <th>UNIDAD</th> 
+                          <th></th>                  
+            </tr>            
+                         <% for(var i = 0 ;i < AGOSTO.length; i++){ %> 
+            <tr> 
+                          <td><%= AGOSTO[i].PARTIDA%></td>
+                          <td><%= AGOSTO[i].JCU%></td>
+                          <td><%= AGOSTO[i].CLASIFICACION%></td>
+                          <td><%= AGOSTO[i].EQUIPO%></td>
+                          <td><%= AGOSTO[i].MARCA%></td>
+                          <td><%= AGOSTO[i].MODELO%></td>
+                          <td><%= AGOSTO[i].SERIE%></td>
+                          <td><%= AGOSTO[i].UNIDAD%></td>
+                          <td>
+                          <a href="/Informacion/<%= AGOSTO[i]._id%>" class= "btn btn-info">Datos</a>
+                          </td>
+              </tr>
+                          <% } %>                
+        </table>
+      </div>
+    </div> 
+
+
+  </div>
+
+
+  <div class="tab-pane fade" id="ex1-tabs-9" role="tabpanel" aria-labelledby="ex1-tab-9">
+   
+
+    <div class="row">    
+      <div class="col">
+        <table id="myTable" class="table table-striped table-hover">
+          <tr class="header">    
+                          <th>PARTIDA</th>
+                          <th>JCU</th>
+                          <th>CLASIFICACION</th>
+                          <th>EQUIPO</th>
+                          <th>MARCA</th>
+                          <th>MODELO</th>
+                          <th>SERIE</th>
+                          <th>UNIDAD</th> 
+                          <th></th>                  
+            </tr>            
+                         <% for(var i = 0 ;i < SEPTIEMBRE.length; i++){ %> 
+            <tr> 
+                          <td><%= SEPTIEMBRE[i].PARTIDA%></td>
+                          <td><%= SEPTIEMBRE[i].JCU%></td>
+                          <td><%= SEPTIEMBRE[i].CLASIFICACION%></td>
+                          <td><%= SEPTIEMBRE[i].EQUIPO%></td>
+                          <td><%= SEPTIEMBRE[i].MARCA%></td>
+                          <td><%= SEPTIEMBRE[i].MODELO%></td>
+                          <td><%= SEPTIEMBRE[i].SERIE%></td>
+                          <td><%= SEPTIEMBRE[i].UNIDAD%></td>
+                          <td>
+                          <a href="/Informacion/<%= SEPTIEMBRE[i]._id%>" class= "btn btn-info">Datos</a>
+                          </td>
+              </tr>
+                          <% } %>                
+        </table>
+      </div>
+    </div> 
+
+
+  </div>
+
+
+  <div class="tab-pane fade" id="ex1-tabs-10" role="tabpanel" aria-labelledby="ex1-tab-10">
+   
+
+    <div class="row">    
+      <div class="col">
+        <table id="myTable" class="table table-striped table-hover">
+          <tr class="header">    
+                          <th>PARTIDA</th>
+                          <th>JCU</th>
+                          <th>CLASIFICACION</th>
+                          <th>EQUIPO</th>
+                          <th>MARCA</th>
+                          <th>MODELO</th>
+                          <th>SERIE</th>
+                          <th>UNIDAD</th> 
+                          <th></th>                  
+            </tr>            
+                         <% for(var i = 0 ;i < OCTUBRE.length; i++){ %> 
+            <tr> 
+                          <td><%= OCTUBRE[i].PARTIDA%></td>
+                          <td><%= OCTUBRE[i].JCU%></td>
+                          <td><%= OCTUBRE[i].CLASIFICACION%></td>
+                          <td><%= OCTUBRE[i].EQUIPO%></td>
+                          <td><%= OCTUBRE[i].MARCA%></td>
+                          <td><%= OCTUBRE[i].MODELO%></td>
+                          <td><%= OCTUBRE[i].SERIE%></td>
+                          <td><%= OCTUBRE[i].UNIDAD%></td>
+                          <td>
+                          <a href="/Informacion/<%= OCTUBRE[i]._id%>" class= "btn btn-info">Datos</a>
+                          </td>
+              </tr>
+                          <% } %>                
+        </table>
+      </div>
+    </div> 
+
+
+  </div>
+
+
+  <div class="tab-pane fade" id="ex1-tabs-11" role="tabpanel" aria-labelledby="ex1-tab-11">
+   
+
+    <div class="row">    
+      <div class="col">
+        <table id="myTable" class="table table-striped table-hover">
+          <tr class="header">    
+                          <th>PARTIDA</th>
+                          <th>JCU</th>
+                          <th>CLASIFICACION</th>
+                          <th>EQUIPO</th>
+                          <th>MARCA</th>
+                          <th>MODELO</th>
+                          <th>SERIE</th>
+                          <th>UNIDAD</th> 
+                          <th></th>                  
+            </tr>            
+                         <% for(var i = 0 ;i < NOVIEMBRE.length; i++){ %> 
+            <tr> 
+                          <td><%= NOVIEMBRE[i].PARTIDA%></td>
+                          <td><%= NOVIEMBRE[i].JCU%></td>
+                          <td><%= NOVIEMBRE[i].CLASIFICACION%></td>
+                          <td><%= NOVIEMBRE[i].EQUIPO%></td>
+                          <td><%= NOVIEMBRE[i].MARCA%></td>
+                          <td><%= NOVIEMBRE[i].MODELO%></td>
+                          <td><%= NOVIEMBRE[i].SERIE%></td>
+                          <td><%= NOVIEMBRE[i].UNIDAD%></td>
+                          <td>
+                          <a href="/Informacion/<%= NOVIEMBRE[i]._id%>" class= "btn btn-info">Datos</a>
+                          </td>
+              </tr>
+                          <% } %>                
+        </table>
+      </div>
+    </div> 
+
+
+  </div>
+
+
+  <div class="tab-pane fade" id="ex1-tabs-12" role="tabpanel" aria-labelledby="ex1-tab-12">
+   
+
+    <div class="row">    
+      <div class="col">
+        <table id="myTable" class="table table-striped table-hover">
+          <tr class="header">    
+                          <th>PARTIDA</th>
+                          <th>JCU</th>
+                          <th>CLASIFICACION</th>
+                          <th>EQUIPO</th>
+                          <th>MARCA</th>
+                          <th>MODELO</th>
+                          <th>SERIE</th>
+                          <th>UNIDAD</th> 
+                          <th></th>                  
+            </tr>            
+                         <% for(var i = 0 ;i < DICIEMBRE.length; i++){ %> 
+            <tr> 
+                          <td><%= DICIEMBRE[i].PARTIDA%></td>
+                          <td><%= DICIEMBRE[i].JCU%></td>
+                          <td><%= DICIEMBRE[i].CLASIFICACION%></td>
+                          <td><%= DICIEMBRE[i].EQUIPO%></td>
+                          <td><%= DICIEMBRE[i].MARCA%></td>
+                          <td><%= DICIEMBRE[i].MODELO%></td>
+                          <td><%= DICIEMBRE[i].SERIE%></td>
+                          <td><%= DICIEMBRE[i].UNIDAD%></td>
+                          <td>
+                          <a href="/Informacion/<%= DICIEMBRE[i]._id%>" class= "btn btn-info">Datos</a>
+                          </td>
+              </tr>
+                          <% } %>                
+        </table>
+      </div>
+    </div> 
+
+
+  </div>
+  
+
+
+</div>
+<!-- Tabs content -->
+    
+  
+
+
+
+<%- include ('partials/_footer.ejs')%>

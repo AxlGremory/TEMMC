@@ -1,0 +1,35 @@
+<%-include ('partials/_header.ejs')%>
+
+
+
+
+<div id="subida">
+<form action = "/subir/<%=equip._id%>" method="POST" enctype="multipart/form-data">
+    <input type="file" name="pdf">
+    <button type="submit">upload</button>
+</form>
+</div>
+
+
+    <div class="col md-7" id="orden">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>FECHA</th>
+                    <th>NOMBRE</th>
+                    <th>LINK</th>                          
+                </tr>
+            </thead>
+            <body>            
+                <% for(var i = 0 ;i < Bita.length; i++){ %> 
+                    <tr>
+                        <td><%= Bita[i].create_at %></td>
+                        <td><%= Bita[i].name%></td>
+                        <td><a class ="btn btn-info" href="/pdf/<%=Bita[i]._id%>">open pdf</a></td>
+                    </tr>  
+                <%}%>                   
+        </body>
+        </table> 
+    </div>
+
+<%- include ('partials/_footer.ejs')%>
